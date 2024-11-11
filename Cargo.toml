@@ -1,0 +1,17 @@
+[package]
+name = "alloy-unit-macros"
+version = "0.1.0"
+edition = "2021"
+homepage = "https://github.com/makcandrov/alloy-unit-macros"
+license = "MIT OR Apache-2.0"
+keywords = ["alloy", "unit", "macros"]
+
+[dependencies]
+alloy-unit-macros-impl.path = "impl"
+alloy-primitives.workspace = true
+
+[workspace.dependencies]
+alloy-primitives = "0.8"
+
+[workspace]
+members = ["impl"]
