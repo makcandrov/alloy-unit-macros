@@ -1,9 +1,18 @@
+[workspace.package]
+version = "0.1.1"
+edition = "2021"
+repository = "https://github.com/makcandrov/alloy-unit-macros"
+homepage = "https://github.com/makcandrov/alloy-unit-macros"
+documentation = "https://docs.rs/alloy-unit-macros"
+license = "MIT OR Apache-2.0"
+
 [package]
 name = "alloy-unit-macros"
-version = "0.1.0"
-edition = "2021"
-homepage = "https://github.com/makcandrov/alloy-unit-macros"
-license = "MIT OR Apache-2.0"
+version.workspace = true
+edition.workspace = true
+repository.workspace = true
+homepage.workspace = true
+license.workspace = true
 keywords = ["alloy", "unit", "macros"]
 
 [dependencies]

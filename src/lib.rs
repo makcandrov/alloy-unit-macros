@@ -106,6 +106,42 @@ macro_rules! u256 {
     }
 }
 
+/// `1 WAD` = `1e18` = `1000000000000000000`
+///
+/// # Example
+///
+/// ```rust
+/// use alloy_unit_macros::wad;
+/// use alloy_primitives::{I256, U256};
+///
+/// assert_eq!(wad!(1), U256::from(10).pow(U256::from(18)));
+/// assert_eq!(wad!(-1), -I256::try_from(10).unwrap().pow(U256::from(18)));
+/// ```
+#[macro_export]
+macro_rules! wad {
+    ($($t:tt)*) => {
+        $crate::__private::alloy_unit_macros_impl::amount_impl!([$crate] [18] $($t)*)
+    }
+}
+
+/// `1 RAY` = `1e27` = `1000000000000000000000000000`
+///
+/// # Example
+///
+/// ```rust
+/// use alloy_unit_macros::ray;
+/// use alloy_primitives::{I256, U256};
+///
+/// assert_eq!(ray!(1), U256::from(10).pow(U256::from(27)));
+/// assert_eq!(ray!(-1), -I256::try_from(10).unwrap().pow(U256::from(27)));
+/// ```
+#[macro_export]
+macro_rules! ray {
+    ($($t:tt)*) => {
+        $crate::__private::alloy_unit_macros_impl::amount_impl!([$crate] [27] $($t)*)
+    }
+}
+
 /// # Usage
 ///
 /// ```rust

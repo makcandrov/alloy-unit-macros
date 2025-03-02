@@ -19,4 +19,7 @@ fn test_macros() {
 
     let a = wei!(+1);
     println!("{}", a);
+
+    let a = ray!(1);
+    println!("{}", a);
 }
