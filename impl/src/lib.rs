@@ -47,8 +47,8 @@ fn try_expand(input: proc_macro2::TokenStream) -> syn::Result<proc_macro2::Token
         _ => {
             return Err(syn::Error::new_spanned(
                 &input,
-                "expected decimal numberin group",
-            ))
+                "expected decimal number in group",
+            ));
         }
     };
 

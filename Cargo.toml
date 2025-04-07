@@ -1,10 +1,17 @@
 [workspace.package]
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 repository = "https://github.com/makcandrov/alloy-unit-macros"
 homepage = "https://github.com/makcandrov/alloy-unit-macros"
 documentation = "https://docs.rs/alloy-unit-macros"
 license = "MIT OR Apache-2.0"
+
+[workspace]
+members = ["impl"]
+
+[workspace.dependencies]
+alloy-primitives = "1"
+alloy-unit-macros-impl = { path = "impl" }
 
 [package]
 name = "alloy-unit-macros"
@@ -16,11 +23,5 @@ license.workspace = true
 keywords = ["alloy", "unit", "macros"]
 
 [dependencies]
-alloy-unit-macros-impl.path = "impl"
+alloy-unit-macros-impl.workspace = true
 alloy-primitives.workspace = true
-
-[workspace.dependencies]
-alloy-primitives = "0.8"
-
-[workspace]
-members = ["impl"]
