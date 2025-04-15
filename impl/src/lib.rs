@@ -39,7 +39,7 @@ fn try_expand(input: proc_macro2::TokenStream) -> syn::Result<proc_macro2::Token
                 bracketed!(inner in group);
                 let lit = inner.parse::<proc_macro2::Literal>()?;
                 lit.to_string().parse::<usize>().map_err(|err| {
-                    syn::Error::new_spanned(&input, &format!("parsing failed: {err}"))
+                    syn::Error::new_spanned(&input, format!("parsing failed: {err}"))
                 })
             },
             group.to_token_stream(),
